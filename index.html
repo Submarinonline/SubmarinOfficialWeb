@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems);
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.scrollspy');
+      var instances = M.ScrollSpy.init(elems);
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.carousel');
+      var instances = M.Carousel.init(elems);
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems);
+    });
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164604599-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-164604599-1');
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+  <style type="text/css">
+    @font-face {
+      font-family: 'Mgen';
+      src: url(font/mplus-1p-light.ttf);
+    }
+
+    html {overflow: auto;}
+
+    body {
+      line-height: 2;
+      overflow: hidden;
+      min-width:100%;
+    }
+
+    .btn-flat {
+      text-transform: none;
+    }
+
+    .loop_wrap {
+      display: flex;
+      width: 200vw;
+      height: 50px;
+    }
+
+    .loop_wrap img {
+      width: 200vw;
+      height: 50px;
+    }
+
+    @keyframes loop {
+      0% {
+        transform: translateX(100%);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    @keyframes loop2 {
+      0% {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-200%);
+      }
+    }
+
+    .loop_wrap img:first-child {
+      animation: loop 10s -5s linear infinite;
+    }
+
+    .loop_wrap img:last-child {
+      animation: loop2 10s linear infinite;
+    }
+  </style>
+  <title>Submarin</title>
+</head>
+
+<hisubway>
+  <!--
+<;;;:;:;;;:;;:;:::<~~_` `  .J"!.-_:;;<<<<<<<<<<<>>>+===1?<<<<<1++--_?"4J..=``.J<:::::::::J:/ (  ?+?,
+ _~::;:::;;;:::;:::_ `` .J=` .__(<<++>>>>;;>>>>>?????==??>?+++zuuuXwOz+-.O_.,=!~(:~::::::2<_.(+Oi,1/
+ _::::::;::;;::::~` `.,"  -_(+++1=llv ?====?==ll=====l=l======tOwXzzzzOtOzt.V4.  _~::::::((3J= `  -,
+_(;;:::::;::::<~~  .7! ._(++===llllv`  =ll=ltttttrrrttrrtrOOOOOrOwzzzzwwwvw,4o-?S,  ~::::j(\` ` ` `/
+_;::;::::::~_` `..=.._(++z`?==?===l:  ,!(tOrvvvrvzwwOOOv77777777COOOZZXuuuwX,uO+-.Ta. _::?J;````` .>
+:;::::::::vi.`.-^.((+zzl={  .1=lllc .(J:JzuuuuuuuXXXuzzzzuzuuuuuzuuwwwu&&J--iY7Oz+(.(h. ~:11<.` `.zj
+::;::::;;J??1J$-(1xwzvrtll    1Orr!,jZCJuuzzuuzuuuuzzzzzzzzzzzzzzuzzuuuuuuuZuZZUOzXZWo(T, ~?1+<+11JC
+:::;::;;v>;<;?duwwwuzzrt{-<<-..jzGz-?!_wuuzuzuuzzzzuzzuuuuuuuuuuuuuuzzuuuuuuZuZZZuXJ4ZXo(4,_(JO77?JG
+::::::;jC<::::dXuuzZwvrrO.CZ71-duuuA--wuuzuzuzuuuuuuZZXuuuuuuuZXZZuuXwwuuuZZZZZZZZuXS(vWXo?e/~\```.+
+::::<;<J?<:~~~~4uuuwuwuuuuC!`.JuuuuuuuuzuuuuuukV77<<~~~<:~~<<<<<<;;<?7TOuuww0XZZZZZWXZZkWyXd| i `.,-
+;;jx1113<<~~~~~(KuuuZZuuuuuGzuuuuuuuuuuuZ0VWY~_~~~~~~~~~~~~~1~~~~.~_~~~:::(7TXXXWyXWZZZuKZZZU,_~<<;j
+::;?2?><:~~::~~~WuXXZuuuuuuuuuuuuuZXVY>~~(=.~~.~~.~..~.~~.~..I~..~._-~.~.~_~::~?TZZzZuZXuuZZZXP1J+jM
+;;:;w?=<~~:~~::~XdHuuuuuZuuZuuuZXV=~~~~~(^~~.~.~..~~..~..~.~~_;.~.~.(-~...~..~_~:_?UXZXXZZZZZkd,_<:?
+:;::J1=>:~~~~(+JHZZZZuuuZZZuuZX=~~~~~~~(!.~...~~...~.~....~..~(,....._<........~`_~~(4WZZZZZZX<G  _~
+:::<~b11_:~::(HZZZuZZZZuZuuZX3~~~~~..~-!~..~..~(_~....~.~..~...(-....._<............_~(4yZZZZWl,]` `
+_~``.Wh1<:~~JWZZZZZuuZZuuXk=~~~~~.~..~/...~...~(...~........~._.6_....._l......_..~.  _~?dXZWWk_H `
+ ``.WyWh<~(XZZZZZZZZZuuuX5~~~~.~.~..~(_...~....[.~..~....~...~..(2-.....(/......(.~..~.`_-4XZZX!d``
+  .HyyyWhdyZZZZZZZZZZZX$(>~~.~~.~..~_r.~.....~_}~............~_._j< .....(_......<.<~.~_._ ?XyS_N` `
+` dXyWWHyZZZZZZZZZZZuX>:W~..~.~~..~~(~..~.~...(>._-...........~- ,p_` ....%.......1_>...`..`,ZI(F` `
+ .SyyWyyZZZZZZZZZZZZf<_(f..~.~~~...~J...~~.~..J_.( ``  .....`  _``W/````` ,-   . .-;_-    .. (g@` `
+.HyyKyZyyyyZyZZZZZZf~~.k}...~.~~..._%`_~.._-_-S:.((   ```` `   ` `JX_  . ` ] `  `` -_( ` ` .. =` ` `
+(yXHyyyZyyZyZZyZZZf_~.(8._~~..~...~(:~(J77<??V7fTWd-.._.._....._- ,wLJ++_-.k< `    `\ :`` ``(`.,  `
+HWMVyyyZyZyZZyZZyf..~~(O.`..~~~__.~(?!~~~~~~(1<b~JJ._~~.~~.~.~~~_<(+u_~~~~_d9i,.~~  ...`    .[ 1`` `
+HWWyyyyyZyZyyZyyU~__.~(1 `  `` .`.!(~~.~~~~(D;;z.JJ_..~~~.~.~~~~~.(?J;~~~~_f?c_~~~_` r-_` _-.k ,. `
+VVVWyyyZyyZyyZZX]` ` _(j  `   `J~.~(_~~.~~~J:<~?;(R<...~.~~~~.~~.~J??]~~~~(C?w+_~~_``l__-..~_%[.<_~:
+VyWHyyyyZyyyyyyM].` ..,O` .~~.-]~.~d[~.~~~($+..<O_Dr..~.~~.~~~~~<~r~>$(((_2+<1r:~~( .>_. ..._\I.l:::
+WWHVyyyyyyyyyyW@].~~~~_d__~.~..t..~Kb~~(~~(+-.. ?fSI~.~~~~.~~~.(>(<(TI:~~JvC-zw<~~(_.> , ...(~J.<:::
+HffVyyyyyyyVVWDbn~..._~j>~~~..,$_~_bdJdMbOMNMMMMNgJJ_.~~~~~~~.(X(% .gMMHHMMHN9d;~~(....(_...J.J,::::
+NWfVVyyyyVVfWK+$d_.(-(__r~.~..(YT4WNNMdM@+MkWD`!7SeH$~~_~~~~~(>$>.dMM#XY?7ZWMHmL_(<`_~.d~~~(:~2I::::
+,NWVVVVVVffWHP?I+[~(_~~~1~~.~.({<??NMD+H@ld#N4&Jp?<7D~~(~~~(v!J'`.MMMMTn.e::?MM$((!.~~(P..(3_(D::::~
+ .WWVfffpfWMWF:>?u_<~~_~(/~...,>.._MMN_.NszWBVWWF  `,+(<~(J<~`````H<WMZWHF`(>VK_:2_<~_d>~($::J:::::+
+ ` 4WfppWVY<db~z+>6r.~~~~1~~.._{..`b~7H,,".++z1M!````,I?!_ ```````7+?<<+d! `_j$:J<J~_JJ_(X>~:::::+7!
+_-..?""!.._(HF:1>__5._-~<_1-_~_l~_.j: `.??WmggMD``  `` ````````` `.z<_(d`` ` J(Jt(}(vjnv(Jr~::::j> .
+v^._._...(jqM><J_..(_J!~~(~~!-~/a(_.r_.``...`.``.```````````` `` ` ?7""^````.y3z<2J' <3__[1~::::?c_4
+ ` ....-(3-_Y<~~~~_(f~.~--__~~~(dh-_j_._ .`__.~.````` ``` `.::_ `````` __~..^b=+ZC.-`((<~(,>::::;?+_
+ .....-J<:_(<~~~~_J3~<~(J..~..~~~.(h,1- ` .`` `_.```````````__~`` ``````.....#v>:~~.`.-I<..1(:::::<7
+~..._($;+JV<~~~..J~:::1(J,.....~.~~?/?z,``````````````  ` ````` ````````````.#1;~_~_``(?z+_.(7G++<::
+..~(+DiJOC?:~~_._>::(<~_;h-_~__._~.~W.``_ ````````` ```` `` ` ``````````````.DC1<<-~_` <_61<-.(+!(<?
+~-?jCOO3+>?_.~__~j~:<<~~>r7e:~.._/.~(b.```````` ` `` ```````````` `` ``````.Kc?+O+;_._`(:.1(3+- ?,._
+~(::;d>:j>>_..._ jc+><~~<t_~4-_..(+~.JN,`````` ``` .7VT77<<~-((,````````` .Z?I<(<XJ<_~-`>~.4_(6_.-3.
+.r:::R::(<><_~~.__Nj~>~~(X+_J<~<.~_3,_7Tn.`` `````````_`    ` ```` `` ``.,6==J::z?vG<~.-._..1-.j-..(
+<b.__O/~~$>;<.~.~_(H(<<_(fvz+r~~~~._.q,_~?N, `` ` ````````````````````.J5=??1vc:<<j-?x~__~.._h-_b< .
+;?n..__7++<;:<_~.~(,R+:~~b;<?1~~~_~_~(?c::dHXh..`` ` ``````````` ``.-=:j<<c;+zJ+>;;u._S__..~.(-(t _.
+:;<v+-.~~:<11(__~.~((2~~~C6<;jc~~__(~(<?<:?r1vTWHa,.``` ```````..J3c:~:(<(z>j>?SI;;<t._S~~.~~(r\`.~~
+G+::<?TuJ(1-:;:<~-~~(J/~~j~(4&r~~~<(.(:jC;<].~_?=vYHKHa-..`..JT1>>jE:::J<J;;>?>+?;>?d-.([~.~~(\..<~(
+/_?G+:;;<++7YG+<:(,~~(6_~(+_~~?-~~(J~JZTCy1]~....?1z?1VBmvT5??=??+dv_:~JJ1>>>>>+>>???r(Fj~~~($._-+7+
+(7i.(4xJXXA++<?x>jDCJ:?S,~6<-:~_~~(J~n-:J77h,~~~..._<z????da&&uuuQH&zvTd#<<:;;;::<Tc?PJ~(~~(c(z+~__~
+~:::?7dS77TTXXw&-($<~7&?06,I<<;<_~_z_P<J<::<(7u._~...-<???<Mb<~_<7+:::;dD::::::::::fuY.~J_(C(C `````
+_:::j+x7""^!?7CywXZk+-:?iSJ6>;;+z::r(H+;:::::~~~?4J-..`_<+?dF_```..z"""55+J-~:~::+#mG/~(3+=-D```````
+(J7!....__..~~(_?JXZyXn-_ ?5<?77"TY$jvb<~``_~:~:~~(zU+.`` ~(_(J7!..-..~...~.(3/~~($<?7Sm3~_(>```````
+! .-(_?!```` !-__.<wkdyX_   (--(J~(Sd2<7,`` ` _~~:~~(1?o`` .=_......._.~~~.~~.(x:z$ `` (?Oyv1```````
+~?!``````````` ?+-`(XyyZc-.;_!`` _(dOk~``?_.``` `_~~(Sm1S-v_~~(_~__~<~_~..~..~~(yRt ` (ZOvO30}``````
+-->
+</hisubway>
+
+<body>
+
+  <header>
+    <div style="width:100%; height:75vh; background-color:#41ADEF;">
+      <div class="row">
+        <div class="col l6 m10 offset-l3 offset-m1" style="height:75vh;">
+          <div style="height:30%;"></div>
+          <div class="row center" style="height:40%; color:white">
+            <img width="100%" src="img/submarin.png"><br>
+            <span style="font-family:Mgen;font-size:xx-large;">ようこそ、深海へ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="loop_wrap">
+      <img src="img/wave.png"><img src="img/wave.png">
+    </div>
+    <div class="row center" style="height:2vh;"></div>
+    <div class="row center" style="height:3vh;">
+      <a class="col l4 m8 s10 offset-l4 offset-m2 offset-s1 waves-effect btn-flat light-blue-text" style="border:1px solid;border-color:ligth-blue;font-family:Mgen;font-size:large;" href="https://submarin.online">
+        いますぐアクセス
+      </a>
+    </div>
+    <div class="row center" style="height:13vh;">
+      <a class="light-blue-text" href="#introduction">詳細を見る<br></a>
+      <i class="material-icons">
+        <a class="light-blue-text" href="#introduction">
+          keyboard_arrow_down
+        </a>
+      </i>
+    </div>
+
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div style="height:30px;"></div>
+        <div class="col s12 section">
+          <div class="col l7 m12">
+            <div>
+              <h4>Submarinとは</h4>
+              <p id="introduction" class="scrollspy"><big>Submarinは不特定多数とのコニュニケーションに特化したリアルタイムチャットアプリケーションです。<br>
+                  オープンチャットやグループチャットで参加しているユーザーとのコミュニケーションを楽しめます。<br>
+                  アカウントの概念がなく、誰でも手軽・気軽に参加できます。</big></p>
+            </div>
+          </div>
+          <div class="col l5 m12 s12">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/aOoyC0h0d0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="col m12 s10 offset-s1 section card">
+          <div class="col m6 s12">
+            <h5>ニュース一覧</h5>
+            <iframe width="100%" height="400"
+              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLm4G4rI0qdtpQ6tybhveWaEALGx3SJHZOmjcd-ie_lck8KxBE70WZibY8pEqfH7nJItlDgLr_MnQq/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+          </div>
+          <div class="col m6 s12">
+            <h5>公式Twitter</h5>
+            <a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/SubmarinOnline?ref_src=twsrc%5Etfw">公式ツイッター</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#41ADEF; color:white" class="hoverable">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 section">
+            <div class="row valign-wrapper">
+              <div class="col xl3 l5 m6 hide-on-small-only">
+                <img width="100%" src="img/subicon.png">
+              </div>
+              <div class="col xl9 l7 m6 s12">
+                <h3>自由な深海の世界へ</h3>
+                <p><big>アイコン、TwitterIDを設定したらすぐに参加できます。メールアドレスやパスワードなどの面倒なアカウントの管理は要りません。<br>
+                    また、他SNSのような通知は基本なく、通知に縛られない自由なコミュニケーションを行うこともできます。</big></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col m6 s12 section">
+          <div class="row valign-wrapper">
+            <div class="col s4">
+              <img width="100%" src="img/senden2.png">
+            </div>
+            <div class="col s8">
+              <h5>オープンチャット</h5>
+              <p>ユーザー全員が自由に文字や画像などでコミュニケーションを取ることができます。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col m6 s12 section">
+          <div class="row valign-wrapper">
+            <div class="col s4">
+              <img width="100%" src="img/senden3.png">
+            </div>
+            <div class="col s8">
+              <h5>グループチャット</h5>
+              <p>ユーザーが自由に部屋を作成し、参加したユーザーのみでのコミュニケーションを楽しめます。パスワードを設定し、特定のユーザーのみでのやり取りも行えます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m6 s12 section">
+          <div class="row valign-wrapper">
+            <div class="col s4">
+              <img width="100%" src="img/senden4.png">
+            </div>
+            <div class="col s8">
+              <h5>履歴機能</h5>
+              <p>チャットから退出するとチャット画面がリセットされますが、履歴機能を使って今まで送受信した会話を見返すことができます。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col m6 s12 section">
+          <div class="row valign-wrapper">
+            <div class="col s4">
+              <img width="100%" src="img/sendenEX2.png">
+            </div>
+            <div class="col s8">
+              <h5>最低限の機能</h5>
+              <p>怪レい日本语機能やミュート機能など、必要最低限ながら重要な機能のみを採用。軽量で快適なコミュニケーションをすることができます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m6 s12 section">
+          <div class="row valign-wrapper">
+            <div class="col s4">
+              <img width="100%" src="img/senden6.png">
+            </div>
+            <div class="col s8">
+              <h5>ダークモード</h5>
+              <p>システムやブラウザの設定に従ってSubmarinもダークモードに変わります。<br>
+                開発者はキレ気味でこの機能を実装しました。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col m6 s12 section">
+          <div class="row valign-wrapper">
+            <div class="col s4">
+              <img width="100%" src="img/sendenEX.png">
+            </div>
+            <div class="col s8">
+              <h5>Submarin Timeline</h5>
+              <p>通知がほしい場合や履歴を簡単に見返したい場合は、この機能を用いることで簡単に実現可能です。この機能を使うにはDiscordアプリ及びアカウント登録が必要です。<br>
+                <a href="https://discordapp.com/invite/FQyqgZR" 　target="_blank">いますぐ参加</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="divider"></div>
+        <div class="col s12 section center">
+          <h4>マルチプラットフォーム</h4>
+          <p>いくつかのOSには専用のアプリケーションを用意しています。<br>
+            また、Submarin Webはほとんどのデバイスからアクセスすることが可能です。</p>
+        </div>
+        <div class="col xl4 l12 m12 s12 section center hoverable">
+          <h5>Android Client</h5>
+          <div style="height:110px;">
+            <p>Androidクライアント。<br>
+              見やすいUIと軽量な動作が特徴です。<br>
+              Web版にはない独自機能があります。</p>
+          </div>
+          <font size="3">
+            <a class="col s12 waves-effect btn-flat light-blue-text" style="border:1px solid;border-color:ligth-blue;" href="https://play.google.com/store/apps/details?id=com.shenyusoftware.submarin">
+              Google Playでダウンロード
+            </a>
+          </font>
+          <div style="height:50px;"></div>
+        </div>
+        <div style="height:10px;"></div>
+        <div class="col xl4 l12 m12 s12 section center hoverable">
+          <h5>Submarin Web</h5>
+          <div style="height:110px;">
+            <p>Webブラウザ版Submarin。<br>
+              様々なデバイスで動作します。<br>
+              Android版にない独自機能があります。</p>
+          </div>
+          <font size="3">
+            <a class="col s12 waves-effect btn-flat light-blue-text" style="border:1px solid;border-color:ligth-blue;" href="https://submarin.online">
+              Submarinを開く
+            </a>
+          </font>
+          <div style="height:50px;"></div>
+        </div>
+        <div style="height:10px;"></div>
+        <div class="col xl4 l12 m12 s12 section center hoverable">
+          <h5>Electronmarin</h5>
+          <div style="height:110px;">
+            <p>Windows/macOS/Linuxクライアント。<br>
+              詳細は「ダウンロード」から確認ください。<br>
+              Submarin Webと同等の機能です。</p>
+          </div>
+          <font size="3">
+            <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger" style="border:1px solid;border-color:ligth-blue;" href="#modal1">
+              ダウンロード
+            </a>
+          </font>
+          <div style="height:50px;"></div>
+        </div>
+        <div style="height:10px;"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="divider"></div>
+      <div class="col s12 section center">
+        <h4>開発・運営</h4>
+        <p>アイコンをクリックするとそれぞれのTwitterアカウントにジャンプします。</p>
+        <div class="carousel" style="height:430px;">
+          <a class="carousel-item z-depth-3" href="https://twitter.com/HiSubway" 　target="_blank">
+            <img src="https://pbs.twimg.com/profile_images/1259685367591997441/Up0qMyIC_400x400.jpg">
+            <div class="center black-text">
+              <h5>さぶうぇい</h5>
+              Android Client開発者<br>
+              すべての始まり
+            </div>
+          </a>
+          <a class="carousel-item z-depth-3" href="https://twitter.com/0_a_e" 　target="_blank">
+            <img src="https://pbs.twimg.com/profile_images/1256719243862634496/VfOlUlqC_400x400.jpg">
+            <div class="center black-text">
+              <h5>orange</h5>
+              Submarin Web開発者<br>
+              その他色々
+            </div>
+          </a>
+          <a class="carousel-item z-depth-3" href="https://twitter.com/yamad_linuxer" 　target="_blank">
+            <img src="https://pbs.twimg.com/profile_images/1229738730425970694/MDYuoF9A_400x400.jpg">
+            <div class="center black-text">
+              <h5>山D</h5>
+              サーバー管理<br>
+              Elemarin(Ubuntu)開発者
+            </div>
+          </a>
+          <a class="carousel-item z-depth-3" href="https://twitter.com/Hayao0819" target="_blank">
+            <img src="https://pbs.twimg.com/profile_images/1245506056513392641/zEaN5-OT_400x400.jpg">
+            <div class="center black-text">
+              <h5>山田ハヤオ</h5>
+              サーバー管理<br>
+              Elemarin(ArchLinux)開発者
+            </div>
+          </a>
+          <a class="carousel-item z-depth-3" href="https://twitter.com/305_tb" target="_blank">
+            <img src="https://pbs.twimg.com/profile_images/1103955367560536065/5vCoEa3b_400x400.png">
+            <div class="center black-text">
+              <h5>boda</h5>
+              Electronmarin(Portable)<br>
+              開発者
+            </div>
+          </a>
+          <a class="carousel-item z-depth-3" href="https://twitter.com/sfx_as" target="_blank">
+            <img src="https://pbs.twimg.com/profile_images/1258323081300307968/zpYkdSHd_400x400.jpg">
+            <div class="center black-text">
+              <h5>sh</h5>
+              ComingSoon...
+            </div>
+          </a>
+          <a class="carousel-item z-depth-3" href="https://twitter.com/ElectronicsBot" target="_blank">
+            <img src="img/hakunagi.jpg">
+            <div class="center black-text">
+              <h5>ハクナギ</h5>
+              公式サイト作成・運営<br>
+              ここに並んでよいのだろうか
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col s12 section center">
+          <h4>Electronmarin for your style</h4>
+          <p>Electronmarinには"Portable Edition"と"Application Edition"の2種類が存在します。<br>
+            機能は同一ですのでお使いのOSや用途に合わせたものをダウンロードしましょう。</p>
+        </div>
+        <div class="col s12 section center hoverable">
+          <h5>Portable Edition</h5>
+          <p>Portable Editionはインストール不要、ダウンロードしたzipファイルを展開して<br>
+            すぐ使用可能なWindows/macOS/Linux向けのElectronmarinです。<br>
+            USBメモリなどに入れて持ち運ぶのにも適しています。</p>
+          <font size="3">
+            <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger" style="border:1px solid;border-color:ligth-blue;" href="https://github.com/B-Boda/electronmarin" 　target="_blank">
+              Githubからダウンロード(zip)
+            </a>
+          </font>
+          <div style="height:50px;"></div>
+        </div>
+        <div style="height:10px;"></div>
+        <div class="col s12 section center hoverable">
+          <h5>Application Edition</h5>
+          <p>Application Editionはインストール可能なパッケージとしてまとめられ、<br>
+            簡単にアプリケーションとして登録ができるLinux向けElectronmarinです。<br>
+            Electronmarinをパネルにピン留めしたい方に適しています。</p>
+          <font size="3">
+            <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger" style="border:1px solid;border-color:ligth-blue;" href="https://xn--d-8o2b.com/storage/misc/electronmarin_1.0.1_amd64.deb" 　target="_blank">
+              Ubuntu用パッケージをダウンロード(.deb)
+            </a>
+            <div style="height:50px;"></div>
+            <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger" style="border:1px solid;border-color:ligth-blue;" href="https://xn--d-8o2b.com/storage/misc/electronmarin-bin-1.0.1-1-x86_64.pkg.tar.zst" 　target="_blank">
+              ArchLinux用パッケージをダウンロード(.pkg.tar.zst)
+            </a>
+          </font>
+          <div style="height:50px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect btn-flat">閉じる</a>
+    </div>
+  </div>
+  <!-- Modal Structure End-->
+
+  <footer>
+    <div style="height:50px;"></div>
+    <div class="section" style="width:100%; height:100px; background-color:#41ADEF;">
+      <div style="width:100%; height:80%;">
+        <img class="left hide-on-small-only" height="100%" src="img/submarin.png">
+        <span class="right white-text" style="font-family:Mgen">
+          お問い合わせは<a class="white-text" href="https://twitter.com/SubmarinOnline">
+            <u>公式Twitterアカウント</u>
+          </a>まで。<br>
+          　　　　　公式サイト制作・運営：<a class="white-text" href="https://twitter.com/ElectronicsBot">
+            <u>ハクナギ</u>
+          </a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
