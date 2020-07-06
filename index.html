@@ -69,19 +69,19 @@
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems);
     });
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.scrollspy');
       var instances = M.ScrollSpy.init(elems);
     });
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.carousel');
       var instances = M.Carousel.init(elems);
     });
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.collapsible');
       var instances = M.Collapsible.init(elems);
     });
@@ -121,10 +121,16 @@
       box-shadow: none;
     }
 
+    html {
+      overflow-x: hidden;
+      overflow-y: overlay;
+    }
+
     body {
       line-height: 2;
-      overflow: hidden;
       min-width: 100%;
+      overflow-x: hidden;
+      overflow-y: overlay;
     }
 
     .btn-flat {
@@ -192,8 +198,9 @@
     </div>
     <div class="row center" style="height:2vh;"></div>
     <div class="row center" style="height:3vh;">
-      <a class="col l4 m8 s10 offset-l4 offset-m2 offset-s1 waves-effect btn-flat light-blue-text" style="border:1px solid;border-color:ligth-blue;font-family:'M PLUS 1p',sans-serif;font-size:large;" href="https://submarin.online" target="_blank"
-        rel="noopener noreferrer">
+      <a class="col l4 m8 s10 offset-l4 offset-m2 offset-s1 waves-effect btn-flat light-blue-text"
+        style="border:1px solid;border-color:ligth-blue;font-family:'M PLUS 1p',sans-serif;font-size:large;"
+        href="https://submarin.online" target="_blank" rel="noopener noreferrer">
         いますぐアクセス
       </a>
     </div>
@@ -223,7 +230,9 @@
           </div>
           <div class="col l5 m12 s12">
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/aOoyC0h0d0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/aOoyC0h0d0o" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -235,7 +244,8 @@
           </div>
           <div class="col m6 s12">
             <h5>公式Twitter</h5>
-            <a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/SubmarinOnline?ref_src=twsrc%5Etfw">公式ツイッター</a>
+            <a class="twitter-timeline" data-height="400" data-theme="light"
+              href="https://twitter.com/SubmarinOnline?ref_src=twsrc%5Etfw">公式ツイッター</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
@@ -349,7 +359,9 @@
               Web版にはない独自機能があります。</p>
           </div>
           <font size="3">
-            <a class="col s12 waves-effect btn-flat light-blue-text" style="border:1px solid;border-color:ligth-blue;" href="https://play.google.com/store/apps/details?id=com.shenyusoftware.submarin" target="_blank" rel="noopener noreferrer">
+            <a class="col s12 waves-effect btn-flat light-blue-text" style="border:1px solid;border-color:ligth-blue;"
+              href="https://play.google.com/store/apps/details?id=com.shenyusoftware.submarin" target="_blank"
+              rel="noopener noreferrer">
               Google Playでダウンロード
             </a>
           </font>
@@ -364,7 +376,8 @@
               Android版にない独自機能があります。</p>
           </div>
           <font size="3">
-            <a class="col s12 waves-effect btn-flat light-blue-text" style="border:1px solid;border-color:ligth-blue;" href="https://submarin.online" target="_blank" rel="noopener noreferrer">
+            <a class="col s12 waves-effect btn-flat light-blue-text" style="border:1px solid;border-color:ligth-blue;"
+              href="https://submarin.online" target="_blank" rel="noopener noreferrer">
               Submarinを開く
             </a>
           </font>
@@ -380,7 +393,8 @@
                 詳細は「ダウンロード」へ。<br></p>
             </div>
             <font size="3">
-              <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger" style="border:1px solid;border-color:ligth-blue;" href="#modal1">
+              <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger"
+                style="border:1px solid;border-color:ligth-blue;" href="#modal1">
                 ダウンロード
               </a>
             </font>
@@ -395,7 +409,9 @@
               </p>
             </div>
             <font size="3">
-              <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger" style="border:1px solid;border-color:ligth-blue;" href="https://github.com/shaaaaaQ/Shimarin" target="_blank" rel="noopener noreferrer">
+              <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger"
+                style="border:1px solid;border-color:ligth-blue;" href="https://github.com/shaaaaaQ/Shimarin"
+                target="_blank" rel="noopener noreferrer">
                 Githubからダウンロード
               </a>
             </font>
@@ -412,8 +428,11 @@
         <h4>開発・運営</h4>
         <p>アイコンをクリックするとそれぞれのTwitterアカウントにジャンプします。</p>
         <div class="carousel" style="height:430px;">
-          <a class="carousel-item z-depth-3" href="https://twitter.com/HiSubway" target="_blank" rel="noopener noreferrer">
-            <img src="https://xn--d-8o2b.com/submarin/icons/subway.jpg" onerror="this.src = 'img/icon/subway.jpg'; this.removeAttribute('onerror')" onload="this.removeAttribute('onerror'); this.removeAttribute('onload');">
+          <a class="carousel-item z-depth-3" href="https://twitter.com/HiSubway" target="_blank"
+            rel="noopener noreferrer">
+            <img src="https://xn--d-8o2b.com/submarin/icons/subway.jpg"
+              onerror="this.src = 'img/icon/subway.jpg'; this.removeAttribute('onerror')"
+              onload="this.removeAttribute('onerror'); this.removeAttribute('onload');">
             <div class="center black-text">
               <h5>さぶうぇい</h5>
               Android Client開発者<br>
@@ -428,15 +447,19 @@
               その他色々
             </div>
           </a>
-          <a class="carousel-item z-depth-3" href="https://twitter.com/yamad_linuxer" target="_blank" rel="noopener noreferrer">
-            <img src="https://xn--d-8o2b.com/submarin/icons/yamad.png" onerror="this.src = 'img/icon/yamad.jpg'; this.removeAttribute('onerror')" onload="this.removeAttribute('onerror'); this.removeAttribute('onload');">
+          <a class="carousel-item z-depth-3" href="https://twitter.com/yamad_linuxer" target="_blank"
+            rel="noopener noreferrer">
+            <img src="https://xn--d-8o2b.com/submarin/icons/yamad.png"
+              onerror="this.src = 'img/icon/yamad.jpg'; this.removeAttribute('onerror')"
+              onload="this.removeAttribute('onerror'); this.removeAttribute('onload');">
             <div class="center black-text">
               <h5>山D</h5>
               サーバー管理<br>
               Elemarin(Ubuntu)開発者
             </div>
           </a>
-          <a class="carousel-item z-depth-3" href="https://twitter.com/Hayao0819" target="_blank" rel="noopener noreferrer">
+          <a class="carousel-item z-depth-3" href="https://twitter.com/Hayao0819" target="_blank"
+            rel="noopener noreferrer">
             <img src="img/icon/hayao.jpg">
             <div class="center black-text">
               <h5>山田ハヤオ</h5>
@@ -444,7 +467,8 @@
               Elemarin(ArchLinux)開発者
             </div>
           </a>
-          <a class="carousel-item z-depth-3" href="https://twitter.com/305_tb" target="_blank" rel="noopener noreferrer">
+          <a class="carousel-item z-depth-3" href="https://twitter.com/305_tb" target="_blank"
+            rel="noopener noreferrer">
             <img src="img/icon/boda.png">
             <div class="center black-text">
               <h5>boda</h5>
@@ -452,7 +476,8 @@
               開発者
             </div>
           </a>
-          <a class="carousel-item z-depth-3" href="https://twitter.com/sfx_as" target="_blank" rel="noopener noreferrer">
+          <a class="carousel-item z-depth-3" href="https://twitter.com/sfx_as" target="_blank"
+            rel="noopener noreferrer">
             <img src="img/icon/sh.jpg">
             <div class="center black-text">
               <h5>sh</h5>
@@ -460,7 +485,8 @@
               さぶマリン△
             </div>
           </a>
-          <a class="carousel-item z-depth-3" href="https://twitter.com/ElectronicsBot" target="_blank" rel="noopener noreferrer">
+          <a class="carousel-item z-depth-3" href="https://twitter.com/ElectronicsBot" target="_blank"
+            rel="noopener noreferrer">
             <img src="img/icon/hakunagi.jpg">
             <div class="center black-text">
               <h5>ハクナギ</h5>
@@ -488,7 +514,9 @@
             すぐ使用可能なWindows/macOS/Linux向けのElectronmarinです。<br>
             USBメモリなどに入れて持ち運ぶのにも適しています。</p>
           <font size="3">
-            <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger" style="border:1px solid;border-color:ligth-blue;" href="https://github.com/B-Boda/electronmarin" target="_blank" rel="noopener noreferrer">
+            <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger"
+              style="border:1px solid;border-color:ligth-blue;" href="https://github.com/B-Boda/electronmarin"
+              target="_blank" rel="noopener noreferrer">
               Githubからダウンロード(zip)
             </a>
           </font>
@@ -501,11 +529,15 @@
             簡単にアプリケーションとして登録ができるLinux向けElectronmarinです。<br>
             Electronmarinをパネルにピン留めしたい方に適しています。</p>
           <font size="3">
-            <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger" style="border:1px solid;border-color:ligth-blue;" href="https://xn--d-8o2b.com/storage/misc/electronmarin_1.0.1_amd64.deb">
+            <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger"
+              style="border:1px solid;border-color:ligth-blue;"
+              href="https://xn--d-8o2b.com/storage/misc/electronmarin_1.0.1_amd64.deb">
               Ubuntu用パッケージをダウンロード(.deb)
             </a>
             <div style="height:50px;"></div>
-            <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger" style="border:1px solid;border-color:ligth-blue;" href="https://xn--d-8o2b.com/storage/misc/electronmarin-bin-1.0.1-1-x86_64.pkg.tar.zst">
+            <a class="col s12 waves-effect btn-flat light-blue-text modal-trigger"
+              style="border:1px solid;border-color:ligth-blue;"
+              href="https://xn--d-8o2b.com/storage/misc/electronmarin-bin-1.0.1-1-x86_64.pkg.tar.zst">
               ArchLinux用パッケージをダウンロード(.pkg.tar.zst)
             </a>
           </font>
@@ -525,10 +557,12 @@
       <div style="width:100%; height:80%;">
         <img class="left hide-on-small-only" height="100%" src="img/submarin.png">
         <span class="right white-text" style="font-family:'M PLUS 1p',sans-serif;">
-          お問い合わせは<a class="white-text" href="https://twitter.com/SubmarinOnline" target="_blank" rel="noopener noreferrer">
+          お問い合わせは<a class="white-text" href="https://twitter.com/SubmarinOnline" target="_blank"
+            rel="noopener noreferrer">
             <u>公式Twitterアカウント</u>
           </a>まで。<br>
-          　　　　　公式サイト制作・運営：<a class="white-text" href="https://twitter.com/ElectronicsBot" target="_blank" rel="noopener noreferrer">
+          　　　　　公式サイト制作・運営：<a class="white-text" href="https://twitter.com/ElectronicsBot" target="_blank"
+            rel="noopener noreferrer">
             <u>ハクナギ</u>
           </a>
         </span>
