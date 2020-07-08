@@ -66,6 +66,7 @@
   <link rel="icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./index.css">
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript">
@@ -101,110 +102,46 @@
   </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
-  <style type="text/css">
-    html {
-      overflow: overlay;
-    }
-
-    ::-webkit-scrollbar {
-      width: 7px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: transparent;
-      border: none;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #41ADEF;
-      border-radius: 10px;
-      box-shadow: none;
-    }
-
-    html {
-      overflow-x: hidden;
-      overflow-y: overlay;
-    }
-
-    body {
-      line-height: 2;
-      min-width: 100%;
-      overflow-x: hidden;
-      overflow-y: overlay;
-    }
-
-    .btn-flat {
-      text-transform: none;
-    }
-
-    .loop_wrap {
-      display: flex;
-      width: 200vw;
-      height: 50px;
-    }
-
-    .loop_wrap img {
-      width: 200vw;
-      height: 50px;
-    }
-
-    @keyframes loop {
-      0% {
-        transform: translateX(100%);
-      }
-
-      to {
-        transform: translateX(-100%);
-      }
-    }
-
-    @keyframes loop2 {
-      0% {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-200%);
-      }
-    }
-
-    .loop_wrap img:first-child {
-      animation: loop 20s -10s linear infinite;
-    }
-
-    .loop_wrap img:last-child {
-      animation: loop2 20s linear infinite;
-    }
-  </style>
   <title>Submarin OfficialWeb</title>
 </head>
 
 <body>
 
-  <header style="user-select: none">
-    <div style="width:100%; height:75vh; background-color:#41ADEF;">
+  <header style="user-select: none;height:100vh;">
+    <div style="width:100%; height:60vh;background-color:#41ADEF;">
       <div class="row">
-        <div class="col l6 m10 offset-l3 offset-m1" style="height:75vh;">
-          <div style="height:30%;"></div>
-          <div class="row center" style="height:40%; color:white">
+        <div class="col l6 m10 offset-l3 offset-m1" style="height:60vh;">
+          <div style="height:25%;"></div>
+          <div class="row center" style="height:50%; color:white">
             <img width="100%" src="img/submarin.png"><br>
             <span style="font-family:'M PLUS 1p',sans-serif;font-size:xx-large;">ようこそ、深海へ</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="loop_wrap">
-      <img src="img/wave.png"><img src="img/wave.png">
+    <div class="mobileheight">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(65,173,239,0.75)" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(65,173,239,0.75)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(65,173,239,0.75)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(65,173,239,0.75)" />
+        </g>
+      </svg>
     </div>
-    <div class="row center" style="height:2vh;"></div>
-    <div class="row center" style="height:3vh;">
+    <div class="row center" style="height:3%;"></div>
+    <div class="row center" style="height:3%;">
       <a class="col l4 m8 s10 offset-l4 offset-m2 offset-s1 waves-effect btn-flat light-blue-text"
         style="border:1px solid;border-color:ligth-blue;font-family:'M PLUS 1p',sans-serif;font-size:large;"
         href="https://submarin.online" target="_blank" rel="noopener noreferrer">
         いますぐアクセス
       </a>
     </div>
-    <div class="row center" style="height:13vh;">
+    <div class="row center" style="height:30%;">
       <a class="light-blue-text" href="#introduction">詳細を見る<br></a>
       <i class="material-icons">
         <a class="light-blue-text" href="#introduction">
@@ -212,7 +149,6 @@
         </a>
       </i>
     </div>
-
   </header>
 
   <main>
