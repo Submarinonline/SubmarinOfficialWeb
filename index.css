@@ -1,5 +1,13 @@
 html {
-    overflow: overlay;
+    overflow-x: hidden;
+    overflow-y: overlay;
+}
+
+body {
+    min-width: 100%;
+    overflow-x: hidden;
+    overflow-y: overlay;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -15,17 +23,6 @@ html {
     background: #41ADEF;
     border-radius: 10px;
     box-shadow: none;
-}
-
-html {
-    overflow-x: hidden;
-    overflow-y: overlay;
-}
-
-body {
-    min-width: 100%;
-    overflow-x: hidden;
-    overflow-y: overlay;
 }
 
 .btn-flat {
