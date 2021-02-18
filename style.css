@@ -4,6 +4,10 @@
   --swiper-theme-color: var(--marinblue);
 }
 
+* {
+  scroll-behavior: smooth
+}
+
 html {
   overflow-x: hidden;
 }
@@ -333,6 +337,11 @@ div.appcard-name {
 
   .developer-icon {
     width: 60%;
+    height: auto;
+  }
+
+  #bottomlogo {
+    width: 300px;
     height: auto;
   }
 }
