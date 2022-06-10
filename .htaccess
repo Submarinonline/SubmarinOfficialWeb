@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{http_host} ^sbmr.in
+RewriteRule ^(.*) https://wiki.sbmr.in/$1 [R=301,L]
+
